@@ -1,15 +1,15 @@
+s = 'АБ БВ ВЖЕГ ГЕД ДЕЖК ЕЖ ЖЗН ЗКДЛ КЛ ЛМ МАНЗ НАБВЗ'
+D = {x[0]: x[1:] for x in s.split()}
+print(D)
 
-f=open('12.txt')
-sp=[]
-for line in f:
-    sp.append(int(line))
-k=0
-minn=999999999999999
-for i in range(len(sp)-1):
-    if sp[i]%5==0 or sp[i+1]%5==0:
-        k+=1
-        minn=min(minn,sp[i]+sp[i+1])
-print(k)
-print(minn)
-        
-    
+
+def foo(str, e):
+    if e == str[-1] and len(str) > 1:
+        print(str)
+        return 1
+    elif str[-1] in str[:-1]:
+        return 0
+    return sum([foo(str + x, e) for x in D[str[-1]]])
+
+
+print(foo("Ж", "Ж"))
