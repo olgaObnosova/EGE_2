@@ -1,9 +1,13 @@
-a = int(input())
-k = 1
-sp = [0]
-while sum(sp) < a:
-    k = sp[-1] + 1
-    if k == a:
-        break
-    sp.append(k)
-print(sp)
+for i in range(100):
+    n = bin(i)[2:]
+    if i % 2 == 0:
+        n = n + '10'
+    else:
+        n = n + '11'
+    if n.count('1') % 2 == 0:
+        n = n + n[-1]
+    else:
+        n = n + n[-2]
+    r = int(n, 2)
+    if r > 44:
+        print(i)
