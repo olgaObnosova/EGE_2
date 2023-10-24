@@ -4,11 +4,9 @@ n=int(f.readline())
 S=0
 minr=99999999
 for line in f:
-    a,b
-    a,b
-    maxx=max(a,b)
+    a, b = map(int, line.split())
+    maxx = max(a, b)
     minn=min(a,b)
-    
     S+=maxx
     if (maxx-minn)%3!=0:
         minr=min(minr,maxx-minn)
